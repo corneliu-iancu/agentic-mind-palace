@@ -47,22 +47,34 @@ This discovers your databases and saves their schemas locally.
 
 ## Skills
 
+### Setup
 | Skill | Description |
 |-------|-------------|
 | `/n2c:setup` | Discover workspace databases, match to PARA entities |
+
+### Tasks
+| Skill | Description |
+|-------|-------------|
 | `/n2c:list-tasks` | List/filter tasks (status, due date, energy, My Day, etc.) |
 | `/n2c:get-task` | Get full task details and content by page ID |
+| `/n2c:create-task` | Create task with inferred properties and default template |
+| `/n2c:update-task` | Change any task property (status, due, energy, tags, etc.) |
+| `/n2c:complete-task` | Mark a task as done |
+| `/n2c:my-day` | View and manage today's focused tasks |
 
 ## How it works
 
 - Ships a `.mcp.json` that connects Claude to the Notion API
 - Setup discovers your databases by matching property schemas against PARA patterns
 - Skills instruct Claude how to query and format Notion data
+- Task creation infers properties from context (energy, location, importance, P/I)
 - State is stored locally in `.state/databases.json` (gitignored)
 
 ## Roadmap
 
-- [ ] Task CRUD (create, update, complete)
+- [x] Task read operations (list, get)
+- [x] Task CRUD (create, update, complete)
+- [x] My Day management
 - [ ] Notes operations
 - [ ] Tags/Projects operations
 - [ ] Daily briefing skill
