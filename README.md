@@ -1,4 +1,4 @@
-# notion2claude
+# Agentic Mind Palace 🏰
 
 PARA-powered Notion integration for Claude Code. Discover your workspace schema and interact with tasks, notes, and projects through natural language.
 
