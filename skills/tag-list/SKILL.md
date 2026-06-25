@@ -6,7 +6,7 @@ description: List and filter tags from Notion. Use for "my tags", "show tags", "
 
 Read `.state/databases.json` for the Tags `id` (a data source ID). If missing, say to run `/agentic-mind-palace:setup`.
 
-This is the lookup used by create-task, create-note, update-task, and update-note to resolve a tag name to its page ID.
+This is the lookup used by task-create, note-create, task-update, and note-update to resolve a tag name to its page ID.
 
 ## Query
 

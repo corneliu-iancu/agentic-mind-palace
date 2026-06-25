@@ -6,7 +6,7 @@ description: Create a new tag in Notion. Use when the user wants a new classific
 
 Read `.state/databases.json` for the Tags `id` (a data source ID). If missing, say to run `/agentic-mind-palace:setup`.
 
-Tags are the classification layer — Areas, Resources, and Entities through which notes, tasks, and projects gain context. Before creating, check the tag doesn't already exist (use list-tags) to avoid duplicates.
+Tags are the classification layer — Areas, Resources, and Entities through which notes, tasks, and projects gain context. Before creating, check the tag doesn't already exist (use tag-list) to avoid duplicates.
 
 ## Process
 

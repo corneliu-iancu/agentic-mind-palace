@@ -52,31 +52,49 @@ This discovers your databases and saves their schemas locally.
 |-------|-------------|
 | `/agentic-mind-palace:setup` | Discover workspace databases, match to PARA entities |
 
+Skills are named `<entity>-<action>`.
+
 ### Tasks
 | Skill | Description |
 |-------|-------------|
-| `/agentic-mind-palace:list-tasks` | List/filter tasks (status, due date, energy, My Day, etc.) |
-| `/agentic-mind-palace:get-task` | Get full task details and content by page ID |
-| `/agentic-mind-palace:create-task` | Create task with inferred properties and default template |
-| `/agentic-mind-palace:update-task` | Change any task property (status, due, energy, tags, etc.) |
-| `/agentic-mind-palace:complete-task` | Mark a task as done |
+| `/agentic-mind-palace:task-list` | List/filter tasks (status, due date, energy, My Day, etc.) |
+| `/agentic-mind-palace:task-get` | Get full task details and content by page ID |
+| `/agentic-mind-palace:task-create` | Create task with inferred properties and default template |
+| `/agentic-mind-palace:task-update` | Change any task property (status, due, energy, tags, etc.) |
+| `/agentic-mind-palace:task-complete` | Mark a task as done |
 | `/agentic-mind-palace:my-day` | View and manage today's focused tasks |
+
+### Notes
+| Skill | Description |
+|-------|-------------|
+| `/agentic-mind-palace:note-list` | List/filter notes (type, tag, favorite, importance) |
+| `/agentic-mind-palace:note-get` | Get full note details and content by page ID |
+| `/agentic-mind-palace:note-create` | Capture a note with inferred type and tags |
+| `/agentic-mind-palace:note-update` | Change any note property, or archive it |
+
+### Tags
+| Skill | Description |
+|-------|-------------|
+| `/agentic-mind-palace:tag-list` | List/filter tags; resolves tag names to IDs for other skills |
+| `/agentic-mind-palace:tag-get` | Get full tag details and content by page ID |
+| `/agentic-mind-palace:tag-create` | Create a tag (Area, Resource, or Entity) |
+| `/agentic-mind-palace:tag-update` | Change any tag property, or archive it |
 
 ## How it works
 
 - Ships a `.mcp.json` that connects Claude to the Notion API
 - Setup discovers your databases by matching property schemas against PARA patterns
 - Skills instruct Claude how to query and format Notion data
-- Task creation infers properties from context (energy, location, importance, P/I)
+- Creation infers properties from conversation context (a task's energy/context, a note's type, a tag's classification)
 - State is stored locally in `.state/databases.json` (gitignored)
 
 ## Roadmap
 
-- [x] Task read operations (list, get)
-- [x] Task CRUD (create, update, complete)
+- [x] Task CRUD (list, get, create, update, complete)
 - [x] My Day management
-- [ ] Notes operations
-- [ ] Tags/Projects operations
+- [x] Notes CRUD (list, get, create, update)
+- [x] Tags CRUD (list, get, create, update)
+- [ ] Projects operations
 - [ ] Daily briefing skill
 - [ ] Smart search / knowledge retrieval
 - [ ] Cross-system sync (Jira, GitHub)

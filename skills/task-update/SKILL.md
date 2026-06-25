@@ -8,7 +8,7 @@ Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agent
 
 ## Task Resolution
 
-Same as complete-task — find by context > name > ID.
+Same as task-complete — find by context > name > ID.
 
 1. **From context** — match from recently listed tasks in conversation
 2. **By name/fuzzy match** — search Tasks DB by title
@@ -38,7 +38,7 @@ Map natural language to property changes:
 - "move to progress" / "start working on" → Status: Progress
 - "push to Monday" / "reschedule to next week" → Due: parsed date
 - "set energy high" / "this is deep work" → Energy: High
-- "needs focus" → Context: Focus, "it's an errand" → Context: Outdoor, "it's a call" → Context: Phone (see create-task for full Context signals)
+- "needs focus" → Context: Focus, "it's an errand" → Context: Outdoor, "it's a call" → Context: Phone (see task-create for full Context signals)
 - "add to my day" / "do today" → My Day: true
 - "remove from my day" → My Day: false
 - "clear the due date" / "no deadline" → Due: null
