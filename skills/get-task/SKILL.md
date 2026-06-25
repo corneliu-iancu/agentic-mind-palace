@@ -4,7 +4,7 @@ description: Get full details of a task by page ID. Use when user picks a task f
 
 # Get Task
 
-Read `.state/databases.json` to confirm setup. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` to confirm setup. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## Steps
 

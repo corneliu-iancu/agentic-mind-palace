@@ -4,7 +4,7 @@ description: List and filter tasks from Notion. Use for "my tasks", "what's due"
 
 # List Tasks
 
-Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## Query
 
