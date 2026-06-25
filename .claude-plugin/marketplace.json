@@ -1,0 +1,13 @@
+{
+  "name": "corneliu-iancu",
+  "owner": {
+    "name": "Corneliu Iancu"
+  },
+  "plugins": [
+    {
+      "name": "agentic-mind-palace",
+      "source": "./",
+      "description": "PARA-powered Notion integration for Claude Code. Discover your workspace schema, query tasks, notes, and projects through natural language."
+    }
+  ]
+}
