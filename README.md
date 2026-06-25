@@ -20,22 +20,14 @@ In Notion, open each database you want to use (Tasks, Notes, etc.) and share it 
 
 ### 3. Install plugin
 
-Add to your Claude Code settings (`~/.claude/settings.json`):
+Add the marketplace, then install the plugin:
 
-```json
-{
-  "extraKnownMarketplaces": {
-    "agentic-mind-palace": {
-      "source": {
-        "source": "git",
-        "url": "https://github.com/corneliu-iancu/agentic-mind-palace.git"
-      }
-    }
-  }
-}
+```
+/plugin marketplace add corneliu-iancu/agentic-mind-palace
+/plugin install agentic-mind-palace@corneliu-iancu
 ```
 
-Then enable in Claude Code: `/plugin install agentic-mind-palace`
+The marketplace is named `corneliu-iancu`; the plugin is `agentic-mind-palace`, hence the `@corneliu-iancu` suffix on install.
 
 ### 4. Run setup
 
