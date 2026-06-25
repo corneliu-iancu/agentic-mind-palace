@@ -1,6 +1,6 @@
 # Agentic Mind Palace 🏰
 
-PARA-powered Notion integration for Claude Code. Discover your workspace schema and interact with tasks, notes, and projects through natural language.
+PARA-powered Notion integration for Claude Code. Discover your workspace schema and interact with tasks, notes, tags, and projects through natural language.
 
 ## Setup
 
@@ -80,6 +80,14 @@ Skills are named `<entity>-<action>`.
 | `/agentic-mind-palace:tag-create` | Create a tag (Area, Resource, or Entity) |
 | `/agentic-mind-palace:tag-update` | Change any tag property, or archive it |
 
+### Projects
+| Skill | Description |
+|-------|-------------|
+| `/agentic-mind-palace:project-list` | List/filter projects (active by default; status, favorites) |
+| `/agentic-mind-palace:project-get` | Get full project details, content, and task counts |
+| `/agentic-mind-palace:project-create` | Create a project with inferred status, dates, and tags |
+| `/agentic-mind-palace:project-update` | Change any project property, or close/archive it |
+
 ## How it works
 
 - Ships a `.mcp.json` that connects Claude to the Notion API
@@ -94,7 +102,7 @@ Skills are named `<entity>-<action>`.
 - [x] My Day management
 - [x] Notes CRUD (list, get, create, update)
 - [x] Tags CRUD (list, get, create, update)
-- [ ] Projects operations
+- [x] Projects CRUD (list, get, create, update)
 - [ ] Daily briefing skill
 - [ ] Smart search / knowledge retrieval
 - [ ] Cross-system sync (Jira, GitHub)
