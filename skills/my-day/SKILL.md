@@ -4,7 +4,7 @@ description: View and manage My Day tasks. Use when the user says "my day", "tod
 
 # My Day
 
-Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## View My Day
 

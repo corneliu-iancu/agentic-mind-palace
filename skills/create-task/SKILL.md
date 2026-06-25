@@ -4,7 +4,7 @@ description: Create a new task in Notion. Use when the user wants to add a task,
 
 # Create Task
 
-Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## Process
 

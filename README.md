@@ -25,22 +25,22 @@ Add to your Claude Code settings (`~/.claude/settings.json`):
 ```json
 {
   "extraKnownMarketplaces": {
-    "notion2claude": {
+    "agentic-mind-palace": {
       "source": {
         "source": "git",
-        "url": "https://github.com/corneliu-iancu/notion2claude.git"
+        "url": "https://github.com/corneliu-iancu/agentic-mind-palace.git"
       }
     }
   }
 }
 ```
 
-Then enable in Claude Code: `/plugin install notion2claude`
+Then enable in Claude Code: `/plugin install agentic-mind-palace`
 
 ### 4. Run setup
 
 ```
-/n2c:setup
+/agentic-mind-palace:setup
 ```
 
 This discovers your databases and saves their schemas locally.
@@ -50,17 +50,17 @@ This discovers your databases and saves their schemas locally.
 ### Setup
 | Skill | Description |
 |-------|-------------|
-| `/n2c:setup` | Discover workspace databases, match to PARA entities |
+| `/agentic-mind-palace:setup` | Discover workspace databases, match to PARA entities |
 
 ### Tasks
 | Skill | Description |
 |-------|-------------|
-| `/n2c:list-tasks` | List/filter tasks (status, due date, energy, My Day, etc.) |
-| `/n2c:get-task` | Get full task details and content by page ID |
-| `/n2c:create-task` | Create task with inferred properties and default template |
-| `/n2c:update-task` | Change any task property (status, due, energy, tags, etc.) |
-| `/n2c:complete-task` | Mark a task as done |
-| `/n2c:my-day` | View and manage today's focused tasks |
+| `/agentic-mind-palace:list-tasks` | List/filter tasks (status, due date, energy, My Day, etc.) |
+| `/agentic-mind-palace:get-task` | Get full task details and content by page ID |
+| `/agentic-mind-palace:create-task` | Create task with inferred properties and default template |
+| `/agentic-mind-palace:update-task` | Change any task property (status, due, energy, tags, etc.) |
+| `/agentic-mind-palace:complete-task` | Mark a task as done |
+| `/agentic-mind-palace:my-day` | View and manage today's focused tasks |
 
 ## How it works
 

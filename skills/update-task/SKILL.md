@@ -4,7 +4,7 @@ description: Update any property of an existing task. Use when the user wants to
 
 # Update Task
 
-Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## Task Resolution
 

@@ -4,7 +4,7 @@ description: Mark a task as done. Use when the user says "done", "complete", "fi
 
 # Complete Task
 
-Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/n2c:setup`.
+Read `.state/databases.json` for the Tasks DB ID. If missing, say to run `/agentic-mind-palace:setup`.
 
 ## Task Resolution
 
