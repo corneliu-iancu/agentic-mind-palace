@@ -59,7 +59,7 @@ Call `mcp__notion__API-post-page` with:
 ```json
 {
   "parent": { "type": "data_source_id", "data_source_id": "<tasks_data_source_id>" },
-  "icon": { "type": "icon", "icon": { "name": "hexagon", "color": "purple" } },
+  "icon": { "type": "icon", "icon": { "name": "hexagon-dashed", "color": "purple" } },
   "properties": {
     "Name": { "title": [{ "text": { "content": "<title>" } }] },
     "Status": { "status": { "name": "To Do" } },
@@ -77,7 +77,7 @@ The Tasks `id` in `.state/databases.json` is a **data source ID** — pass it as
 
 Omit properties that have no value (no due date = omit Due entirely).
 
-Always set the page `icon` to the Tasks database default — the built-in `hexagon` icon in `purple`. Use the built-in icon, never an emoji.
+Always set the page `icon` to the Tasks database default — the built-in `hexagon-dashed` icon in `purple`. Use the built-in icon, never an emoji.
 
 ## Output
 
