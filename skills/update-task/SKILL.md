@@ -1,5 +1,5 @@
 ---
-description: Update any property of an existing task. Use when the user wants to change status, due date, energy, importance, location, tags, project, title, My Day, or P/I on a task. Triggers on "change", "set", "move", "reschedule", "bump", "push", "assign", "rename".
+description: Update any property of an existing task. Use when the user wants to change status, due date, energy, context, tags, project, title, or My Day on a task. Triggers on "change", "set", "move", "reschedule", "bump", "push", "assign", "rename".
 ---
 
 # Update Task
@@ -24,9 +24,7 @@ If ambiguous, show candidates and ask.
 | Status | `Status` (status) | To Do, Progress, Done, Archived |
 | Due | `Due` (date) | YYYY-MM-DD, or null to clear |
 | Energy | `Energy` (select) | Low, Normal, High |
-| Location | `Location` (select) | Computer, Home, Errands, Office, Phone |
-| Importance | `Importance` (select) | I, II, III |
-| P/I | `P/I` (select) | Process, Immersive |
+| Context | `Context` (select) | Focus, Maintenance, Hands, Outdoor, Phone, People, Explore, Review |
 | My Day | `My day` (checkbox) | true, false |
 | Tags | `Tags` (relation) | Array of tag page IDs |
 | Project | `Project` (relation) | Array of project page IDs |
@@ -40,6 +38,7 @@ Map natural language to property changes:
 - "move to progress" / "start working on" → Status: Progress
 - "push to Monday" / "reschedule to next week" → Due: parsed date
 - "set energy high" / "this is deep work" → Energy: High
+- "needs focus" → Context: Focus, "it's an errand" → Context: Outdoor, "it's a call" → Context: Phone (see create-task for full Context signals)
 - "add to my day" / "do today" → My Day: true
 - "remove from my day" → My Day: false
 - "clear the due date" / "no deadline" → Due: null

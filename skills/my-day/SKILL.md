@@ -24,7 +24,6 @@ Call `mcp__notion__API-query-data-source` with:
       ]
     },
     "sorts": [
-      { "property": "Importance", "direction": "ascending" },
       { "property": "Due", "direction": "ascending" }
     ]
   }
@@ -36,8 +35,8 @@ Call `mcp__notion__API-query-data-source` with:
 ```
 My Day — <count> tasks
 
-[Status]  Title              Due: YYYY-MM-DD  Energy: X  Importance: X  (id: abc123)
-[Status]  Title              Due: —           Energy: X  Importance: X  (id: def456)
+[Status]  Title              Due: YYYY-MM-DD  Energy: X  Context: X  (id: abc123)
+[Status]  Title              Due: —           Energy: X  Context: X  (id: def456)
 ```
 
 If empty: "My Day is clear. Want to add tasks?"
@@ -73,5 +72,5 @@ When user says "remove X from my day" or "done with X for today":
 If user asks "what should I add?" or My Day is empty, suggest tasks based on:
 - Overdue tasks (highest priority)
 - Due today
-- Status: To Do with Importance I
+- Status: To Do, soonest due first
 - Low energy tasks if it's late in the day

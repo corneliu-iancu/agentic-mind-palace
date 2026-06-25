@@ -19,7 +19,7 @@ Always show full content. Format as markdown:
 ```
 # <title>
 
-Status: X | Due: X | Energy: X | Importance: X | My Day: ✓/✗
+Status: X | Due: X | Energy: X | Context: X | My Day: ✓/✗
 
 ---
 
