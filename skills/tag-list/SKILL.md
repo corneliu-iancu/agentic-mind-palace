@@ -42,9 +42,9 @@ Combine with `{ "and": [...] }`. Always exclude archived unless the user asks to
 
 ## Output
 
-One line per tag (`# Notes` / `# Todo` are formula counts — show when present):
+One line per tag (`# Notes` is a formula count — show when present):
 ```
-[Type]  Name          Notes: N  Todo: N  (id: first-8-chars)
+[Type]  Name          Notes: N  (id: first-8-chars)
 ```
 
 Mark favorites with a leading `★`. If empty: "No tags found."

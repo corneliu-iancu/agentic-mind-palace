@@ -21,7 +21,7 @@ If ambiguous, show candidates and ask.
 | Property | API field | Values |
 |----------|-----------|--------|
 | Title | `Name` (title) | Any string |
-| Type | `Type` (multi_select) | Record, Procedure, Reference, Insight, Annotation, Inbox, Plan |
+| Type | `Type` (multi_select) | Meeting, Journal, Record, Procedure, Reference, Plan |
 | Tags | `Tags` (relation) | Array of tag page IDs |
 | Projects | `Projects` (relation) | Array of project page IDs |
 | URL | `URL` (url) | Any URL, or null to clear |
@@ -33,7 +33,7 @@ Not updatable: ID, Created time, Last edited time (system fields).
 
 ## Parsing User Intent
 
-- "make it a reference" / "tag as insight" → Type (multi-select — replace or append as the user means)
+- "make it a reference" / "tag as a meeting" → Type (multi-select — replace or append as the user means)
 - "tag with X" → Tags: resolve tag ID, append to existing
 - "add to project X" → Projects: resolve project ID by name
 - "set the link to X" / "clear the URL" → URL: value or null

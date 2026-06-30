@@ -19,7 +19,7 @@ Always show full content. Format as markdown:
 ```
 # <project name>
 
-Status: X | Dates: <range or —> | Tags: #x #y | Favorite: ✓/✗
+Status: X | Dates: <range or —> | Favorite: ✓/✗
 Tasks: N open · N done · N overdue
 
 ---

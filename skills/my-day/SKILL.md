@@ -18,7 +18,7 @@ Call `mcp__notion__API-query-data-source` with:
   "query": {
     "filter": {
       "and": [
-        { "property": "My day", "checkbox": { "equals": true } },
+        { "property": "My Day", "checkbox": { "equals": true } },
         { "property": "Status", "status": { "does_not_equal": "Done" } },
         { "property": "Status", "status": { "does_not_equal": "Archived" } }
       ]
@@ -52,7 +52,7 @@ When user says "add X to my day":
 {
   "page_id": "<task_page_id>",
   "properties": {
-    "My day": { "checkbox": true }
+    "My Day": { "checkbox": true }
   }
 }
 ```

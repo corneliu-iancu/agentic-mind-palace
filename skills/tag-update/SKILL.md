@@ -27,7 +27,7 @@ If ambiguous, show candidates and ask.
 | Favorite | `Favorite` (checkbox) | true, false |
 | Archive | `Archive` (checkbox) | true, false |
 
-Not updatable: ID, activity formulas (`# Notes`, `# Todo`, etc.), and the `Tasks`/`Notes`/`Projects`/`Sub-Tags` relations — those are back-references set from the other side.
+Not updatable: ID, the `# Notes` formula and other activity formulas, and the `Notes`/`Sub-Tags` relations — those are back-references set from the other side.
 
 ## Parsing User Intent
 

@@ -11,7 +11,7 @@ A project is a system that moves an idea from intention to reality — it coordi
 ## Process
 
 1. Extract the project name from user intent
-2. Infer `Status`, `Dates`, and `Tags` from context (see inference rules)
+2. Infer `Status` and `Dates` from context (see inference rules)
 3. Optionally apply the body template for an outcome + milestones
 4. Create page via `mcp__notion__API-post-page`
 5. State what was created and what was inferred
@@ -22,7 +22,6 @@ A project is a system that moves an idea from intention to reality — it coordi
 |----------|---------|----------------|
 | Status | Prototype | "actively working"/"in progress" → Doing, else Prototype on create |
 | Dates | none | Parse a start and/or end date — "by end of Q3", "from Monday", "due Aug 15" |
-| Tags | none | Infer the Area/Resource tag from context if a relevant one exists |
 | Favorite | false | "favorite"/"pin"/"star" → true |
 
 `Status` is a **status** property — exactly one of Prototype, Doing, Done, Canceled, Archived.
@@ -60,7 +59,6 @@ Call `mcp__notion__API-post-page` with:
     "Project name": { "title": [{ "text": { "content": "<name>" } }] },
     "Status": { "status": { "name": "<Prototype|Doing|Done|Canceled|Archived>" } },
     "Dates": { "date": { "start": "<YYYY-MM-DD>", "end": "<YYYY-MM-DD>" } },
-    "Tags": { "relation": [{ "id": "<tag_id>" }] },
     "Favorite": { "checkbox": <true|false> }
   },
   "children": [<blocks>]
@@ -82,6 +80,6 @@ Do not set the `Tasks` or `Notes` relations here — those are back-references p
 After creating, confirm:
 ```
 Created project: <name> (id: <first-8-chars>)
-Status: <status> | Dates: <range or —> | Tags: <tags or —>
+Status: <status> | Dates: <range or —>
 Inferred: <list what was auto-set from context>
 ```

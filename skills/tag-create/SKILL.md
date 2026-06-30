@@ -50,7 +50,7 @@ Omit properties that have no value.
 
 Set the page `icon` to the built-in `tag` icon in `purple`. Use a built-in icon, never an emoji.
 
-Do not set the `Tasks`, `Notes`, or `Projects` relations here — those are back-references populated from the task/note/project side.
+Do not set the `Notes` or `Sub-Tags` relations here — `Notes` is a back-reference populated from the note side, and `Sub-Tags` is the inverse of `Parent Tag`.
 
 ## Output
 

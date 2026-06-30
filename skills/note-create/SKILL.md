@@ -20,7 +20,7 @@ Notes are knowledge, not actions — there is no status lifecycle. Per the datab
 
 | Property | Default | Override signal |
 |----------|---------|----------------|
-| Type | Inbox | "for reference"/link/docs → Reference, "I realized"/"idea"/"takeaway" → Insight, "how to"/steps/recipe → Procedure, meeting/log/"notes from" → Record, "note on X"/highlight/comment → Annotation, "plan for"/strategy/roadmap → Plan. A URL with no other signal → Reference |
+| Type | none | "for reference"/link/docs → Reference, "how to"/steps/recipe → Procedure, "meeting"/"call with" → Meeting, "journal"/"today I"/diary → Journal, log/"notes from"/decision/retro → Record, "plan for"/strategy/roadmap → Plan. A URL with no other signal → Reference. If no signal, leave Type unset and flag it |
 | Tags | none | Infer from conversation context if a relevant tag exists. **If none found, flag it** — the note should have a tag |
 | Projects | none | Infer if the note clearly belongs to a project in context |
 | URL | none | Capture any link the user provides |
@@ -47,7 +47,7 @@ Call `mcp__notion__API-post-page` with:
   "icon": { "type": "icon", "icon": { "name": "invitation", "color": "purple" } },
   "properties": {
     "Name": { "title": [{ "text": { "content": "<title>" } }] },
-    "Type": { "multi_select": [{ "name": "<Record|Procedure|Reference|Insight|Annotation|Inbox|Plan>" }] },
+    "Type": { "multi_select": [{ "name": "<Meeting|Journal|Record|Procedure|Reference|Plan>" }] },
     "Tags": { "relation": [{ "id": "<tag_id>" }] },
     "Projects": { "relation": [{ "id": "<project_id>" }] },
     "URL": { "url": "<url>" },

@@ -19,9 +19,9 @@ Default: exclude Archived, sort by Due ascending, limit 10.
 | my day | `My Day` checkbox = true |
 | due today | `Due` date equals today |
 | overdue | `Due` before today AND Status != Done |
-| in progress | `Status` equals "Progress" |
+| in progress | `Status` equals "Doing" |
 | to do | `Status` equals "To Do" |
-| high energy | `Energy` select equals "High" |
+| high energy | `Energy` select equals "🪫 High" |
 
 Combine with `{ "and": [...] }`. Always exclude Archived unless asked.
 

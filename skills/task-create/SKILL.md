@@ -19,11 +19,10 @@ Read `.state/databases.json` for the Tasks `id` (a data source ID). If missing, 
 | Property | Default | Override signal |
 |----------|---------|----------------|
 | Status | To Do | Always To Do on create |
-| Energy | Normal | "quick"/"simple" → Low, "deep work"/"big"/"complex" → High |
+| Energy | 🔋 Normal | "quick"/"simple" → ⚡ Low, "deep work"/"big"/"complex" → 🪫 High |
 | Context | none | "deep work"/"write"/"design" → Focus, "email"/"admin"/"batch" → Maintenance, "fix"/"build"/physical → Hands, "buy"/"pick up"/errand → Outdoor, "call"/"text"/"approve" → Phone, "waiting on X" → People, "research"/"tinker" → Explore, "review"/"plan"/"triage" → Review |
 | My Day | false | "today"/"now"/"this morning"/"right away" → true |
 | Due | none | Parse explicit dates, "Friday", "next week", "EOD", "tomorrow" |
-| Tags | none | Infer from conversation context if a relevant tag exists |
 | Project | none | Infer from conversation context if working within a project |
 
 If confidence is low on any inference, state what was chosen so user can correct.
@@ -64,10 +63,10 @@ Call `mcp__notion__API-post-page` with:
     "Name": { "title": [{ "text": { "content": "<title>" } }] },
     "Status": { "status": { "name": "To Do" } },
     "Due": { "date": { "start": "<YYYY-MM-DD>" } },
-    "Energy": { "select": { "name": "<Low|Normal|High>" } },
+    "Energy": { "select": { "name": "<⚡ Low|🔋 Normal|🪫 High>" } },
     "Context": { "select": { "name": "<Focus|Maintenance|Hands|Outdoor|Phone|People|Explore|Review>" } },
-    "My day": { "checkbox": <true|false> },
-    "Tags": { "relation": [{ "id": "<tag_id>" }] }
+    "My Day": { "checkbox": <true|false> },
+    "Project": { "relation": [{ "id": "<project_id>" }] }
   },
   "children": [<blocks>]
 }

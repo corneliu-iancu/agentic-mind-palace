@@ -1,5 +1,5 @@
 ---
-description: Update any property of an existing project. Use when the user wants to change a project's status, dates, tags, title, favorite, or archive/cancel it. Triggers on "change", "set", "rename", "reschedule", "mark done", "cancel", "archive", "favorite".
+description: Update any property of an existing project. Use when the user wants to change a project's status, dates, title, favorite, or archive/cancel it. Triggers on "change", "set", "rename", "reschedule", "mark done", "cancel", "archive", "favorite".
 ---
 
 # Update Project
@@ -23,7 +23,6 @@ If ambiguous, show candidates and ask.
 | Title | `Project name` (title) | Any string |
 | Status | `Status` (status) | Prototype, Doing, Done, Canceled, Archived |
 | Dates | `Dates` (date) | start and/or end (YYYY-MM-DD), or null to clear |
-| Tags | `Tags` (relation) | Array of tag page IDs |
 | Favorite | `Favorite` (checkbox) | true, false |
 | Archive | `Archive` (checkbox) | true, false |
 
@@ -37,7 +36,6 @@ The title property is **`Project name`**, not `Name`.
 - "mark done" / "ship it" / "finished" → Status: Done
 - "cancel it" → Status: Canceled
 - "reschedule to X" / "due by X" → Dates: parsed start/end
-- "tag with X" → Tags: resolve tag ID, append to existing
 - "favorite this" / "pin it" → Favorite: true
 - "archive it" → Archive: true (or Status: Archived if the user means the lifecycle state)
 - "rename to X" → Project name
@@ -62,7 +60,6 @@ Only include properties being changed.
 ## Clearing a property
 
 To clear the dates: `"Dates": { "date": null }`
-To clear tags: `"Tags": { "relation": [] }`
 
 ## Output
 

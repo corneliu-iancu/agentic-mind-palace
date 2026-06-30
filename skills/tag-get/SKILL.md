@@ -20,11 +20,11 @@ Always show full content. Format as markdown:
 # <name>
 
 Type: X | Parent: <parent tag or —> | Favorite: ✓/✗
-Notes: N | Todo: N | Done: N
+Notes: N
 
 ---
 
 <full page content as markdown>
 ```
 
-The counts come from the tag's formula properties (`# Notes`, `# Todo`, `# Done`). Map blocks: paragraph → text, headings → #/##/###, bullets → -, numbered → 1., to_do → checkboxes, code → fenced, quote → >, callout → > with icon.
+The count comes from the tag's `# Notes` formula property. Map blocks: paragraph → text, headings → #/##/###, bullets → -, numbered → 1., to_do → checkboxes, code → fenced, quote → >, callout → > with icon.

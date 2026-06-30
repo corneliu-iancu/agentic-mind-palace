@@ -1,5 +1,5 @@
 ---
-description: Update any property of an existing task. Use when the user wants to change status, due date, energy, context, tags, project, title, or My Day on a task. Triggers on "change", "set", "move", "reschedule", "bump", "push", "assign", "rename".
+description: Update any property of an existing task. Use when the user wants to change status, due date, energy, context, project, title, or My Day on a task. Triggers on "change", "set", "move", "reschedule", "bump", "push", "assign", "rename".
 ---
 
 # Update Task
@@ -21,12 +21,11 @@ If ambiguous, show candidates and ask.
 | Property | API field | Values |
 |----------|-----------|--------|
 | Title | `Name` (title) | Any string |
-| Status | `Status` (status) | To Do, Progress, Done, Archived |
+| Status | `Status` (status) | To Do, Doing, Done, Archived |
 | Due | `Due` (date) | YYYY-MM-DD, or null to clear |
-| Energy | `Energy` (select) | Low, Normal, High |
+| Energy | `Energy` (select) | ⚡ Low, 🔋 Normal, 🪫 High |
 | Context | `Context` (select) | Focus, Maintenance, Hands, Outdoor, Phone, People, Explore, Review |
-| My Day | `My day` (checkbox) | true, false |
-| Tags | `Tags` (relation) | Array of tag page IDs |
+| My Day | `My Day` (checkbox) | true, false |
 | Project | `Project` (relation) | Array of project page IDs |
 
 Not updatable: Task ID, Created time, Last edited time (system fields).
@@ -35,15 +34,14 @@ Not updatable: Task ID, Created time, Last edited time (system fields).
 
 Map natural language to property changes:
 
-- "move to progress" / "start working on" → Status: Progress
+- "move to doing" / "start working on" → Status: Doing
 - "push to Monday" / "reschedule to next week" → Due: parsed date
-- "set energy high" / "this is deep work" → Energy: High
+- "set energy high" / "this is deep work" → Energy: 🪫 High
 - "needs focus" → Context: Focus, "it's an errand" → Context: Outdoor, "it's a call" → Context: Phone (see task-create for full Context signals)
 - "add to my day" / "do today" → My Day: true
 - "remove from my day" → My Day: false
 - "clear the due date" / "no deadline" → Due: null
 - "assign to project X" → Project: resolve project ID by name
-- "tag with X" → Tags: resolve tag ID, append to existing
 
 ## API Call
 
@@ -64,7 +62,7 @@ Only include properties being changed.
 
 To clear a date: `"Due": { "date": null }`
 To clear a select: `"Energy": { "select": null }`
-To clear a relation: `"Tags": { "relation": [] }`
+To clear a relation: `"Project": { "relation": [] }`
 
 ## Output
 

@@ -1,5 +1,5 @@
 ---
-description: List and filter notes from Notion. Use for "my notes", "show notes", "find notes about X", "what's in my inbox", "favorite notes", or any note listing request.
+description: List and filter notes from Notion. Use for "my notes", "show notes", "find notes about X", "untriaged notes", "favorite notes", or any note listing request.
 ---
 
 # List Notes
@@ -16,8 +16,8 @@ Default: exclude archived (`Archive` checkbox = false), sort by `Last edited tim
 
 | Intent | Filter |
 |--------|--------|
-| inbox / untriaged | `Type` multi_select contains "Inbox" |
-| by type | `Type` multi_select contains "<Reference\|Insight\|Procedure\|Record\|Annotation\|Plan>" |
+| by type | `Type` multi_select contains "<Meeting\|Journal\|Record\|Procedure\|Reference\|Plan>" |
+| untyped / untriaged | `Type` multi_select is empty |
 | favorites | `Favorite` checkbox = true |
 | important | `Importance` select equals "I" |
 | about X | search title — use `mcp__notion__API-post-search` or filter `Name` title contains "X" |
