@@ -19,11 +19,11 @@ cat "$STATE_FILE"   # { "databases": { ... } }
 (`$CLAUDE_PROJECT_DIR` comes through empty here), and it is used only to *locate*
 the resolver — the resolver itself stores the *data* outside the versioned plugin
 directory so a version bump cannot orphan it. If the file is missing, tell the
-user to run `/agentic-mind-palace:setup`. Then read the Tasks DB ID from it.
+user to run `/agentic-mind-palace:setup`. Then read the Tasks `id` (a **data source ID**) from it.
 
 ## Query
 
-Call `mcp__notion__API-query-data-source` with the Tasks DB ID.
+Call `mcp__notion__API-query-data-source` with the Tasks data source ID.
 
 Default: exclude Archived, sort by Due ascending, limit 10.
 
