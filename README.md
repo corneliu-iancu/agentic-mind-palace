@@ -86,7 +86,7 @@ Skills are named `<entity>-<action>`.
 - Setup discovers your databases by matching property schemas against PARA patterns
 - Skills instruct Claude how to query and format Notion data
 - Creation infers properties from conversation context (a task's energy/context, a note's type, a tag's classification)
-- State is stored locally in `.state/databases.json` (gitignored)
+- State location is resolved by a shared script (`scripts/state-file.sh`) that every skill calls, so the writer (setup) and readers never disagree: `$AGENTIC_MIND_PALACE_STATE` override → an existing `.state/databases.json` found by walking up from the working directory → a stable `${XDG_STATE_HOME:-$HOME/.local/state}/agentic-mind-palace/databases.json` (kept outside the versioned plugin dir so upgrades don't orphan it)
 
 ## Roadmap
 

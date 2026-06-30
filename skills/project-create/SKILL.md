@@ -4,7 +4,22 @@ description: Create a new project in Notion. Use when the user wants to start a 
 
 # Create Project
 
-Read `.state/databases.json` for the Projects `id` (a data source ID). If missing, say to run `/agentic-mind-palace:setup`.
+## State
+
+This skill needs the database IDs that `setup` discovered. Resolve the state file
+the same way every skill does — via the shared resolver — then read from it:
+
+```bash
+STATE_FILE="$(bash "$CLAUDE_PLUGIN_ROOT/scripts/state-file.sh")"
+[ -f "$STATE_FILE" ] || { echo "Not set up — run /agentic-mind-palace:setup"; exit 1; }
+cat "$STATE_FILE"   # { "databases": { ... } }
+```
+
+`$CLAUDE_PLUGIN_ROOT` is the only anchor that is reliable inside a plugin
+(`$CLAUDE_PROJECT_DIR` comes through empty here), and it is used only to *locate*
+the resolver — the resolver itself stores the *data* outside the versioned plugin
+directory so a version bump cannot orphan it. If the file is missing, tell the
+user to run `/agentic-mind-palace:setup`. Then read the Projects `id` (a **data source ID**) from it.
 
 A project is a system that moves an idea from intention to reality — it coordinates tasks, notes, and decisions toward a defined outcome. Unlike a task, it's not a single action. If the user describes one concrete action, suggest task-create instead.
 
@@ -67,7 +82,7 @@ Call `mcp__notion__API-post-page` with:
 
 The title property is **`Project name`**, not `Name`.
 
-The Projects `id` in `.state/databases.json` is a **data source ID** — pass it as `data_source_id`, not `database_id`, or the create fails with 404.
+The Projects `id` in the state file is a **data source ID** — pass it as `data_source_id`, not `database_id`, or the create fails with 404.
 
 Omit properties that have no value. For a single date, include only `start` (drop `end`).
 

@@ -4,7 +4,22 @@ description: Create a new tag in Notion. Use when the user wants a new classific
 
 # Create Tag
 
-Read `.state/databases.json` for the Tags `id` (a data source ID). If missing, say to run `/agentic-mind-palace:setup`.
+## State
+
+This skill needs the database IDs that `setup` discovered. Resolve the state file
+the same way every skill does — via the shared resolver — then read from it:
+
+```bash
+STATE_FILE="$(bash "$CLAUDE_PLUGIN_ROOT/scripts/state-file.sh")"
+[ -f "$STATE_FILE" ] || { echo "Not set up — run /agentic-mind-palace:setup"; exit 1; }
+cat "$STATE_FILE"   # { "databases": { ... } }
+```
+
+`$CLAUDE_PLUGIN_ROOT` is the only anchor that is reliable inside a plugin
+(`$CLAUDE_PROJECT_DIR` comes through empty here), and it is used only to *locate*
+the resolver — the resolver itself stores the *data* outside the versioned plugin
+directory so a version bump cannot orphan it. If the file is missing, tell the
+user to run `/agentic-mind-palace:setup`. Then read the Tags `id` (a **data source ID**) from it.
 
 Tags are the classification layer — Areas, Resources, and Entities through which notes, tasks, and projects gain context. Before creating, check the tag doesn't already exist (use tag-list) to avoid duplicates.
 
@@ -44,7 +59,7 @@ Call `mcp__notion__API-post-page` with:
 }
 ```
 
-The Tags `id` in `.state/databases.json` is a **data source ID** — pass it as `data_source_id`, not `database_id`, or the create fails with 404.
+The Tags `id` in the state file is a **data source ID** — pass it as `data_source_id`, not `database_id`, or the create fails with 404.
 
 Omit properties that have no value.
 
