@@ -6,20 +6,13 @@ description: Get full details of a tag by page ID. Use when the user picks a tag
 
 ## State
 
-This skill needs the database IDs that `setup` discovered. Resolve the state file
-the same way every skill does — via the shared resolver — then read from it:
+Database IDs ship with the plugin. Read them from the bundled config:
 
 ```bash
-STATE_FILE="$(bash "$CLAUDE_PLUGIN_ROOT/scripts/state-file.sh")"
-[ -f "$STATE_FILE" ] || { echo "Not set up — run /agentic-mind-palace:setup"; exit 1; }
-cat "$STATE_FILE"   # { "databases": { ... } }
+cat "$CLAUDE_PLUGIN_ROOT/.state/databases.json"   # { "databases": { ... } }
 ```
 
-`$CLAUDE_PLUGIN_ROOT` is the only anchor that is reliable inside a plugin
-(`$CLAUDE_PROJECT_DIR` comes through empty here), and it is used only to *locate*
-the resolver — the resolver itself stores the *data* outside the versioned plugin
-directory so a version bump cannot orphan it. If the file is missing, tell the
-user to run `/agentic-mind-palace:setup`.
+Read the Tags `id` (a **data source ID**) from it.
 
 ## Steps
 

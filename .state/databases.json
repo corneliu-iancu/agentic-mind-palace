@@ -1,0 +1,285 @@
+{
+  "discovered_at": "2026-06-30T10:29:35.000Z",
+  "databases": {
+    "tasks": {
+      "id": "3658a99d-b526-819c-804a-000b12ec440b",
+      "title": "Tasks",
+      "properties": {
+        "Project": {
+          "id": "EgJ%7D",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-81ab-8ad4-c3a145bb5d9b"
+        },
+        "Created Short": {
+          "id": "H%7BIC",
+          "type": "formula"
+        },
+        "isOverdue": {
+          "id": "MDGJ",
+          "type": "formula"
+        },
+        "Created time": {
+          "id": "QSKQ",
+          "type": "created_time"
+        },
+        "Last edited time": {
+          "id": "SHKe",
+          "type": "last_edited_time"
+        },
+        "My Day": {
+          "id": "%5DXh%7C",
+          "type": "checkbox"
+        },
+        "isActive": {
+          "id": "_sU%5C",
+          "type": "formula"
+        },
+        "Task ID": {
+          "id": "hcb%3E",
+          "type": "unique_id",
+          "prefix": "XYZ"
+        },
+        "Updated (Short)": {
+          "id": "iUJ%40",
+          "type": "formula"
+        },
+        "Context": {
+          "id": "kV%5E%7D",
+          "type": "select",
+          "options": ["Focus", "Maintenance", "Hands", "Outdoor", "Phone", "People", "Explore", "Review"]
+        },
+        "Status": {
+          "id": "n%5D%60%40",
+          "type": "status",
+          "options": ["To Do", "Doing", "Done", "Archived"]
+        },
+        "Due": {
+          "id": "r%3D~b",
+          "type": "date"
+        },
+        "Assignee": {
+          "id": "rJ%5DN",
+          "type": "people"
+        },
+        "isDone": {
+          "id": "r~%3Ff",
+          "type": "formula"
+        },
+        "My Day Label": {
+          "id": "%7Dhs%5E",
+          "type": "formula"
+        },
+        "Energy": {
+          "id": "%7Dspo",
+          "type": "select",
+          "options": ["⚡ Low", "🔋 Normal", "🪫 High"]
+        },
+        "Name": {
+          "id": "title",
+          "type": "title"
+        }
+      }
+    },
+    "notes": {
+      "id": "3658a99d-b526-8164-a14c-000b72b461f7",
+      "title": "Notes",
+      "properties": {
+        "URL": {
+          "id": "%3A%7D%5Dm",
+          "type": "url"
+        },
+        "Root Tag": {
+          "id": "CJoi",
+          "type": "rollup"
+        },
+        "Tags": {
+          "id": "Iqq%3D",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-81c3-bce8-c0a018308893"
+        },
+        "Favorite": {
+          "id": "MUVN",
+          "type": "checkbox"
+        },
+        "ID": {
+          "id": "M%5Bj%5B",
+          "type": "unique_id"
+        },
+        "Updated (Short)": {
+          "id": "Q%5Ejs",
+          "type": "formula"
+        },
+        "Last edited time": {
+          "id": "S%7C%7BU",
+          "type": "last_edited_time"
+        },
+        "Archive": {
+          "id": "ZkbD",
+          "type": "checkbox"
+        },
+        "Image": {
+          "id": "%5B%5Drd",
+          "type": "files"
+        },
+        "Created time": {
+          "id": "%5BuF%7C",
+          "type": "created_time"
+        },
+        "Importance": {
+          "id": "%5Dw%7BR",
+          "type": "select",
+          "options": ["I", "II", "III"]
+        },
+        "Projects": {
+          "id": "mn%7DV",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-81ab-8ad4-c3a145bb5d9b"
+        },
+        "Type": {
+          "id": "w%5ESo",
+          "type": "multi_select",
+          "options": ["Meeting", "Journal", "Record", "Procedure", "Reference", "Plan"]
+        },
+        "Created (short)": {
+          "id": "%7BH%7DM",
+          "type": "formula"
+        },
+        "Name": {
+          "id": "title",
+          "type": "title"
+        }
+      }
+    },
+    "projects": {
+      "id": "3658a99d-b526-813a-88ff-000b7ef9d516",
+      "title": "Projects",
+      "properties": {
+        "Updated (Short)": {
+          "id": "%40gNV",
+          "type": "formula"
+        },
+        "# Tasks": {
+          "id": "FaES",
+          "type": "formula"
+        },
+        "Favorite": {
+          "id": "Ndhb",
+          "type": "checkbox"
+        },
+        "# Done": {
+          "id": "RWCh",
+          "type": "formula"
+        },
+        "Tasks": {
+          "id": "TLC%5C",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-812a-8759-cdf7521a0d27"
+        },
+        "Created Short": {
+          "id": "VtOW",
+          "type": "formula"
+        },
+        "# Open": {
+          "id": "WKyS",
+          "type": "formula"
+        },
+        "Created time": {
+          "id": "WNiD",
+          "type": "created_time"
+        },
+        "Overdue Tasks Count": {
+          "id": "Xp%3AI",
+          "type": "rollup"
+        },
+        "Active Tasks Count": {
+          "id": "Y%40_B",
+          "type": "rollup"
+        },
+        "Status": {
+          "id": "lmMe",
+          "type": "status",
+          "options": ["Prototype", "Doing", "Done", "Canceled", "Archived"]
+        },
+        "Dates": {
+          "id": "p%5C%5Ed",
+          "type": "date"
+        },
+        "Notes": {
+          "id": "sHOk",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-8151-a6b5-d5c7665f0c2a"
+        },
+        "Last edited time": {
+          "id": "t%40av",
+          "type": "last_edited_time"
+        },
+        "Archive": {
+          "id": "tSJo",
+          "type": "checkbox"
+        },
+        "Tasks Overview": {
+          "id": "%7BQ%3CE",
+          "type": "formula"
+        },
+        "Project name": {
+          "id": "title",
+          "type": "title"
+        }
+      }
+    },
+    "tags": {
+      "id": "3658a99d-b526-81aa-ab50-000b543c99c6",
+      "title": "Tags",
+      "properties": {
+        "Latest Activity": {
+          "id": "%3F%3AnJ",
+          "type": "formula"
+        },
+        "Description": {
+          "id": "%3FiRw",
+          "type": "rich_text"
+        },
+        "Type": {
+          "id": "M%3CzN",
+          "type": "status",
+          "options": ["Area", "Resource", "Entity"]
+        },
+        "Latest Activity Timestamp": {
+          "id": "M_mp",
+          "type": "formula"
+        },
+        "Sub-Tags": {
+          "id": "Nd%40%40",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-81c3-bce8-c0a018308893"
+        },
+        "Archive": {
+          "id": "UQSf",
+          "type": "checkbox"
+        },
+        "# Notes": {
+          "id": "%5BTT%5D",
+          "type": "formula"
+        },
+        "Notes": {
+          "id": "%5Da%3Ew",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-8151-a6b5-d5c7665f0c2a"
+        },
+        "Parent Tag": {
+          "id": "pSCA",
+          "type": "relation",
+          "relation_database_id": "3658a99d-b526-81c3-bce8-c0a018308893"
+        },
+        "Favorite": {
+          "id": "tUuc",
+          "type": "checkbox"
+        },
+        "Name": {
+          "id": "title",
+          "type": "title"
+        }
+      }
+    }
+  }
+}

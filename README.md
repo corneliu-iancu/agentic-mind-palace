@@ -1,6 +1,6 @@
 # Agentic Mind Palace 🏰
 
-PARA-powered Notion integration for Claude Code. Discover your workspace schema and interact with tasks, notes, tags, and projects through natural language.
+PARA-powered Notion integration for Claude Code. Interact with tasks, notes, tags, and projects through natural language.
 
 ## Setup
 
@@ -29,20 +29,9 @@ Add the marketplace, then install the plugin:
 
 The marketplace is named `corneliu-iancu`; the plugin is `agentic-mind-palace`, hence the `@corneliu-iancu` suffix on install.
 
-### 4. Run setup
-
-```
-/agentic-mind-palace:setup
-```
-
-This discovers your databases and saves their schemas locally.
+The database IDs and schema ship with the plugin (`.state/databases.json`), so there's no setup step — the skills work as soon as the plugin is installed and your integration can see the databases.
 
 ## Skills
-
-### Setup
-| Skill | Description |
-|-------|-------------|
-| `/agentic-mind-palace:setup` | Discover workspace databases, match to PARA entities |
 
 Skills are named `<entity>-<action>`.
 
@@ -83,10 +72,11 @@ Skills are named `<entity>-<action>`.
 ## How it works
 
 - Ships a `.mcp.json` that connects Claude to the Notion API
-- Setup discovers your databases by matching property schemas against PARA patterns
+- Ships the workspace schema in `.state/databases.json` — the data source IDs and properties for Tasks, Notes, Projects, and Tags. Skills read it via `$CLAUDE_PLUGIN_ROOT/.state/databases.json`, so it travels with the plugin and works in every environment without a setup step
 - Skills instruct Claude how to query and format Notion data
 - Creation infers properties from conversation context (a task's energy/context, a note's type, a tag's classification)
-- State location is resolved by a shared script (`scripts/state-file.sh`) that every skill calls, so the writer (setup) and readers never disagree: `$AGENTIC_MIND_PALACE_STATE` override → an existing `.state/databases.json` found by walking up from the working directory → a stable `${XDG_STATE_HOME:-$HOME/.local/state}/agentic-mind-palace/databases.json` (kept outside the versioned plugin dir so upgrades don't orphan it)
+
+> The bundled config pins this plugin to one workspace's databases. To use it with a different Notion workspace, replace the IDs in `.state/databases.json` with your own data source IDs.
 
 ## Roadmap
 
